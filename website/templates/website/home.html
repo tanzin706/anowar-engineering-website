@@ -1,0 +1,204 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Home - {{ header.logo_text|default:"Company" }}{% endblock %}
+
+{% block content %}
+    <!-- Hero Carousel Section -->
+    {% if heroes %}
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            {% for hero in heroes %}
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active" aria-current="true"{% endif %} aria-label="Slide {{ forloop.counter }}"></button>
+            {% endfor %}
+        </div>
+        <div class="carousel-inner">
+            {% for hero in heroes %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <section class="hero-section" {% if hero.background_image %}style="background-image: url('{{ hero.background_image.url }}');"{% endif %}>
+                    <div class="hero-overlay"></div>
+                    <div class="container hero-content">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h1 class="display-4 fw-bold mb-4">{{ hero.title }}</h1>
+                                {% if hero.subtitle %}
+                                <p class="lead mb-4">{{ hero.subtitle }}</p>
+                                {% endif %}
+                                {% if hero.cta_text %}
+                                <a href="{{ hero.cta_url }}" class="btn btn-primary btn-lg">{{ hero.cta_text }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            {% endfor %}
+        </div>
+        {% if heroes|length > 1 %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- About Section -->
+    {% if about %}
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    {% if about.image %}
+                    <img src="{{ about.image.url }}" alt="{{ about.title }}" class="img-fluid rounded shadow">
+                    {% endif %}
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">{{ about.title }}</h2>
+                    <div class="content">
+                        {{ about.content|linebreaks }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Facts Section -->
+    {% if facts %}
+    <section id="facts" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">{{ facts.title }}</h2>
+                    <div class="content">
+                        {{ facts.content|linebreaks }}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    {% if facts.image %}
+                    <img src="{{ facts.image.url }}" alt="{{ facts.title }}" class="img-fluid rounded shadow">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Products Section -->
+    {% if products %}
+    <section id="products" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Our Products</h2>
+                    <p class="section-subtitle">Explore our range of quality products</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% for product in products %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card h-100 shadow-sm">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top" style="height: 250px; object-fit: cover;">
+                        {% elif product.icon_class %}
+                        <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 250px;">
+                            <i class="{{ product.icon_class }} product-icon"></i>
+                        </div>
+                        {% else %}
+                        <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 250px;">
+                            <i class="bi bi-box product-icon"></i>
+                        </div>
+                        {% endif %}
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">{{ product.name }}</h4>
+                            <p class="card-text flex-grow-1">{{ product.description|linebreaks }}</p>
+                            <div class="mt-auto">
+                                {% if product.link %}
+                                <a href="{{ product.link }}" class="btn btn-primary" target="_blank">Learn More</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Services Section -->
+    {% if services %}
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-subtitle">We provide comprehensive solutions to meet your needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% for service in services %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="text-center">
+                            {% if service.icon_class %}
+                            <i class="{{ service.icon_class }} service-icon"></i>
+                            {% elif service.image %}
+                            <img src="{{ service.image.url }}" alt="{{ service.title }}" class="img-fluid mb-3" style="max-height: 100px; object-fit: contain;">
+                            {% else %}
+                            <i class="bi bi-gear service-icon"></i>
+                            {% endif %}
+                            <h4 class="card-title">{{ service.title }}</h4>
+                            <p class="card-text">{{ service.description|linebreaks }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+
+    <!-- Contact Section -->
+    {% if footer %}
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">We'd love to hear from you</p>
+                    <div class="row mt-5">
+                        {% if footer.phone %}
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-telephone-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Phone</h5>
+                            <p>{{ footer.phone }}</p>
+                        </div>
+                        {% endif %}
+                        {% if footer.email %}
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-envelope-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Email</h5>
+                            <p><a href="mailto:{{ footer.email }}">{{ footer.email }}</a></p>
+                        </div>
+                        {% endif %}
+                        {% if footer.address %}
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-geo-alt-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Address</h5>
+                            <p>{{ footer.address|linebreaks }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}
+
