@@ -52,6 +52,9 @@ Click on **"Advanced"** and add these environment variables:
 | `SECRET_KEY` | `[Generate a random string]` | See below for generator |
 | `DEBUG` | `False` | Always False for production |
 | `ALLOWED_HOSTS` | `your-app-name.onrender.com` | Replace with your actual Render URL |
+| `DJANGO_SUPERUSER_USERNAME` | `admin` | Username for admin account (optional, defaults to 'admin') |
+| `DJANGO_SUPERUSER_EMAIL` | `your-email@example.com` | Email for admin account (optional) |
+| `DJANGO_SUPERUSER_PASSWORD` | `[Your secure password]` | **Required** - Password for admin account |
 
 **To generate a SECRET_KEY:**
 - You can use: `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`
@@ -72,20 +75,22 @@ Render will:
 
 **First deployment takes 5-10 minutes.**
 
-### Step 7: Run Initial Setup
+### Step 7: Access Your Site
 
-Once deployed, you need to:
+Once deployed:
 
-1. **Create a superuser** (for admin access):
-   - Go to your Render dashboard
-   - Click on your service
-   - Go to **"Shell"** tab
-   - Run: `python manage.py createsuperuser`
-   - Follow the prompts
+1. **Superuser is created automatically** during build (if you set `DJANGO_SUPERUSER_PASSWORD`)
+   - The build script automatically creates an admin user if one doesn't exist
+   - Uses the environment variables you set in Step 4
 
 2. **Access your site**:
    - Your site will be live at: `https://your-app-name.onrender.com`
    - Admin panel: `https://your-app-name.onrender.com/admin/`
+   - Login with the username and password you set in environment variables
+
+**Note**: If you didn't set `DJANGO_SUPERUSER_PASSWORD`, you can still create a superuser later by:
+- Setting the environment variable and redeploying, OR
+- Using Django's admin password reset feature (if you have email configured)
 
 ## Automatic Deployments
 
@@ -139,7 +144,9 @@ Once deployed, you need to:
 
 ### Can't Access Admin
 
-- Make sure you created a superuser (Step 7)
+- Make sure you set `DJANGO_SUPERUSER_PASSWORD` environment variable
+- Check build logs to see if superuser was created successfully
+- Verify you're using the correct username (default is 'admin' or what you set in `DJANGO_SUPERUSER_USERNAME`)
 - Check that migrations ran successfully
 
 ## Alternative: Railway (Another Free Option)
