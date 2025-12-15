@@ -1,0 +1,1 @@
+powershell -ExecutionPolicy Bypass -File .sync_static.ps1
