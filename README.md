@@ -97,6 +97,13 @@ company_website/
     - Website: http://127.0.0.1:8000/
     - Admin: http://127.0.0.1:8000/admin/
 
+11. **Export and sync static snapshot (optional)**:
+    ```powershell
+    powershell -ExecutionPolicy Bypass -File .\sync_static.ps1
+    ```
+    - Regenerates `static_site/`
+    - Mirrors it into your local static repo folder (defaults to `D:\Anowar Engineering Static Website`; override with `STATIC_SITE_TARGET`)
+
 ## Using the Admin Interface
 
 1. Log in to the admin panel at `/admin/`
