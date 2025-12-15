@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Anowar Engineering</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        #heroCarousel {
+            margin-top: 2rem;
+        }
+        
+        #heroCarousel .carousel-item {
+            min-height: 800px;
+        }
+        
+        .hero-section {
+            min-height: 800px;
+            background-size: cover;
+            background-position: center;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.397);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 2;
+        }
+        
+        .carousel-indicators {
+            z-index: 2;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        .section-subtitle {
+            color: #6c757d;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+        }
+        
+        .product-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 20px;
+        }
+        
+        .footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #3498db;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!-- Header/Navigation -->
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                
+                    <img src="media/header/usericon_58fSGOG.png" alt="Anowar Engineering" height="50">
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <main>
+        
+    <!-- Hero Carousel Section -->
+    
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"  aria-label="Slide 2"></button>
+            
+        </div>
+        <div class="carousel-inner">
+            
+            <div class="carousel-item active">
+                <section class="hero-section" style="background-image: url('media/hero/page_c_1.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container hero-content">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h1 class="display-4 fw-bold mb-4">Anowar Engineering</h1>
+                                
+                                
+                                <a href="#contact" class="btn btn-primary btn-lg">Get in touch with us</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="carousel-item ">
+                <section class="hero-section" style="background-image: url('media/hero/page_f.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="container hero-content">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h1 class="display-4 fw-bold mb-4">Anowar Engineering</h1>
+                                
+                                
+                                <a href="#contact" class="btn btn-primary btn-lg">Get in touch with us</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        
+    </div>
+    
+
+    <!-- About Section -->
+    
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    
+                    <img src="media/about/407679181_6696424740405211_228702821596432973_n.jpg" alt="About Us" class="img-fluid rounded shadow">
+                    
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Us</h2>
+                    <div class="content">
+                        <p>AKIJ Light Engineering Limited is a forward-thinking and innovative company, established in 2024, with a vision to redefine quality and reliability in its industry. The company is gearing up to make its mark by offering a diverse range of high-quality products, including electrical lighting &amp; accessories, home appliances, building materials, hardware tools etc. </p>
+
+<p>With a focus on sustainability and excellence, we’re committed to providing solutions that blend seamlessly into everyday life, making it smarter, easier, and more efficient. We aim to create products that not only meet but exceed expectations, ensuring a positive impact on the lives of our customers and the world around us.   </p>
+
+<p>What truly sets us apart is our culture, built on a foundation of core values: Positivity, Teamwork, Ownership, Customer Centricity, and Service Orientation. These principles guide every decision we make and every action we take. Our goal is simple yet ambitious—to become the industry’s gold standard, the go-to choice for customers who value quality, innovation, and trust. </p>
+
+<p>Behind our success there is a passionate and driven leadership team, committed to pushing boundaries and delivering exceptional value. We believe in putting our customers first, embracing innovation and maintaining unwavering standards of quality. Whether you are a homeowner, a builder or a business professional, we are here to provide solutions that work for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Facts Section -->
+    
+    <section id="facts" class="section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">Our Achievements</h2>
+                    <div class="content">
+                        <p>Diverse Product Range: Offers a wide array of products, including lighting solutions, switch accessories, home appliances, cables, and hardware tools, catering to both residential and commercial needs.<br>Innovative Lighting Solutions: Specializes in energy-efficient LED bulbs and smart lighting, reducing energy costs and enhancing sustainability.<br>Trusted Parent Company: Backed by AKIJ Resource’s established reputation, ensuring reliability and customer confidence.<br>Quality Assurance: Delivers durable, high-performance products designed to meet international standards, ensuring long-term value.<br>Customizable Solutions: Provides tailored switch accessories and modular systems for flexible home and office installations.<br>Eco-Friendly Focus: Prioritizes sustainable products like energy-saving appliances and recyclable cables, appealing to environmentally conscious consumers.<br>Competitive Pricing: Offers affordable, high-quality products, balancing cost and performance for diverse markets.<br>Robust Distribution Network: Leverages AKIJ’s extensive supply chain for timely delivery and wide market reach, including urban and rural areas.<br>Customer-Centric Support: Provides excellent after-sales service and technical support for all product categories, ensuring customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    
+                    <img src="media/facts/464171062_1108557923966511_7065241293351052612_n.jpg" alt="Our Achievements" class="img-fluid rounded shadow">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Products Section -->
+    
+    <section id="products" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Our Products</h2>
+                    <p class="section-subtitle">Explore our range of quality products</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card h-100 shadow-sm">
+                        
+                        <img src="media/products/WhatsApp_Image_2025-04-23_at_2.41.07_PM_1.jpeg" alt="Item 1" class="card-img-top" style="height: 250px; object-fit: cover;">
+                        
+                        <div class="card-body d-flex flex-column">
+                            <h4 class="card-title">Item 1</h4>
+                            <p class="card-text flex-grow-1"><p>something</p></p>
+                            <div class="mt-auto">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Services Section -->
+    
+
+
+    <!-- Contact Section -->
+    
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">We'd love to hear from you</p>
+                    <div class="row mt-5">
+                        
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-telephone-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Phone</h5>
+                            <p>01684169706</p>
+                        </div>
+                        
+                        
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-envelope-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Email</h5>
+                            <p><a href="mailto:tanzin706@gmail.com">tanzin706@gmail.com</a></p>
+                        </div>
+                        
+                        
+                        <div class="col-md-4 mb-4">
+                            <i class="bi bi-geo-alt-fill fs-1 text-primary"></i>
+                            <h5 class="mt-3">Address</h5>
+                            <p><p>13/12 K.M.DAS LANE,TIKATULI, DHAKA - 1203</p></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    </main>
+
+    <!-- Footer -->
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Company Name</h5>
+                    
+                    <p class="mb-2"><p>13/12 K.M.DAS LANE,TIKATULI, DHAKA - 1203</p></p>
+                    
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Contact</h5>
+                    
+                    <p class="mb-2"><i class="bi bi-telephone"></i> 01684169706</p>
+                    
+                    
+                    <p class="mb-2"><i class="bi bi-envelope"></i> <a href="mailto:tanzin706@gmail.com">tanzin706@gmail.com</a></p>
+                    
+                    
+                    <p class="mb-2"><i class="bi bi-globe"></i> <a href="http://www.youtube.com" target="_blank">Visit Website</a></p>
+                    
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    
+                        
+                    
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">© 2024 Company Name. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+</body>
+</html>
+
