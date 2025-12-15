@@ -139,7 +139,7 @@
     {% if header %}
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{% url 'home' %}">
                 {% if header.logo %}
                     <img src="{{ header.logo.url }}" alt="{{ header.logo_text }}" height="50">
                 {% else %}
